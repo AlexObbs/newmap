@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="icon" href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F649855421254813738%2F&psig=AOvVaw3DcmG2dgCs0FfundAuYr0A&ust=1717279618059000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJjo0ZrzuIYDFQAAAAAdAAAAABAE" type="image/x-icon" />
     <style>
         #map {
             width: 100%;
@@ -31,7 +32,11 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         // Initialize the map and set its view to a chosen geographical point and zoom level
-        var map = L.map('map').setView([20, 0], 1);
+        var map = L.map('map', {
+    center: [20, 0], // Center of the map (latitude, longitude)
+    zoom: 1,        // Initial zoom level
+    worldCopyJump: true // Prevents map from wrapping around horizontally
+});
 
         // Add Mapbox tile layer to the map with terrain
         L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoib2JieWJsYXEiLCJhIjoiY2x3dDQyaXgzMDI2ZzJpcjFwa2VneW1xMSJ9.OW3xBMYEURvFl7z4hHGuJA', {
